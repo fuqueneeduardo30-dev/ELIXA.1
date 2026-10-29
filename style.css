@@ -1,0 +1,1032 @@
+/* ELIXA — paleta tranquila inspirada en la naturaleza */
+:root {
+  --forest:#29483b;
+  --deep:#1d342b;
+  --sage:#9eae98;
+  --pale:#e7eadf;
+  --cream:#f7f5ee;
+  --paper:#fffdf7;
+  --sand:#d8cbb3;
+  --gold:#a78e61;
+  --ink:#26352d;
+  --muted:#68766b;
+  --line:#d9dfd3;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"DM Sans",Arial,sans-serif
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:88px
+}
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400
+}
+a {
+  color:inherit;
+  text-decoration:none
+}
+button,input {
+  font:inherit
+}
+.header {
+  height:84px;
+  padding:0 6.5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  background:rgba(247,245,238,.95);
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:1px solid rgba(41,72,59,.1);
+  backdrop-filter:blur(12px)
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:185px
+}
+.brand img {
+  width:43px;
+  height:43px;
+  object-fit:contain;
+  border-radius:50%
+}
+.brand>span {
+  font:600 25px var(--serif);
+  letter-spacing:4px;
+  color:var(--forest)
+}
+.brand small {
+  display:block;
+  font:500 8px var(--sans);
+  letter-spacing:1.8px;
+  margin-top:1px
+}
+.nav {
+  display:flex;
+  align-items:center;
+  gap:26px
+}
+.nav a,.nav-cta {
+  font-size:11px;
+  letter-spacing:.5px;
+  color:#43554a;
+  transition:color .2s
+}
+.nav a:hover,.text-link:hover {
+  color:var(--gold)
+}
+.nav-cta {
+  border:1px solid var(--forest);
+  padding:12px 15px;
+  border-radius:3px
+}
+.nav-cta span {
+  margin-left:8px
+}
+.menu-toggle {
+  display:none;
+  border:0;
+  background:none;
+  font-size:24px;
+  color:var(--forest)
+}
+.hero {
+  min-height:640px;
+  padding:70px 9% 78px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:5%;
+  position:relative;
+  overflow:hidden;
+  background:radial-gradient(ellipse at 78% 46%,#e1e7d8 0,transparent 37%),linear-gradient(110deg,#f8f6ef,#eff1e8)
+}
+.hero-copy {
+  max-width:540px;
+  position:relative;
+  z-index:2
+}
+.eyebrow {
+  font-size:9px;
+  letter-spacing:2.5px;
+  font-weight:700;
+  color:var(--forest);
+  margin:0 0 22px
+}
+.eyebrow span {
+  display:inline-block;
+  width:23px;
+  height:1px;
+  background:var(--gold);
+  vertical-align:middle;
+  margin-right:9px
+}
+.hero h1,.section-heading h2,.intro h2,.quiz-intro h2,.story h2,.closing h2 {
+  font:500 clamp(46px,5.5vw,78px)/.98 var(--serif);
+  letter-spacing:-1.8px;
+  margin:0;
+  color:var(--deep)
+}
+h1 em,h2 em {
+  font-weight:400;
+  color:#7d947c
+}
+.hero-text {
+  font-size:13px;
+  line-height:1.9;
+  max-width:410px;
+  color:#647267;
+  margin:26px 0 28px
+}
+.hero-actions {
+  display:flex;
+  align-items:center;
+  gap:25px;
+  flex-wrap:wrap
+}
+.button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  padding:15px 21px;
+  border:1px solid transparent;
+  border-radius:2px;
+  font-size:10px;
+  letter-spacing:.7px;
+  cursor:pointer;
+  transition:transform .25s,background .25s,color .25s
+}
+.button:hover {
+  transform:translateY(-2px)
+}
+.button-dark {
+  background:var(--forest);
+  color:white
+}
+.button-dark:hover {
+  background:var(--deep)
+}
+.button-light {
+  background:transparent;
+  border-color:var(--line);
+  color:var(--forest)
+}
+.button:disabled {
+  opacity:.35;
+  cursor:not-allowed;
+  transform:none
+}
+.text-link {
+  font-size:11px;
+  letter-spacing:.4px;
+  border-bottom:1px solid var(--sage);
+  padding-bottom:7px
+}
+.text-link span {
+  margin-left:12px
+}
+.hero-note {
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:60px;
+  font-size:10px;
+  line-height:1.6;
+  color:#718074
+}
+.leaf-icon {
+  font:34px var(--serif);
+  color:var(--gold)
+}
+.hero-art {
+  height:440px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.sun-disc {
+  position:absolute;
+  width:min(33vw,350px);
+  height:min(33vw,350px);
+  border-radius:50%;
+  background:linear-gradient(145deg,#d8e0cf,#edf0e5);
+  box-shadow:inset -15px -15px 40px #c8d4c0
+}
+.orbit {
+  position:absolute;
+  border:1px solid rgba(90,118,91,.3);
+  border-radius:50%;
+  width:390px;
+  height:390px;
+  transform:rotate(-28deg)
+}
+.orbit-two {
+  width:450px;
+  height:320px;
+  transform:rotate(35deg)
+}
+.hero-bottle {
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  filter:drop-shadow(20px 22px 14px rgba(37,55,43,.15));
+  transform:rotate(-4deg)
+}
+.bottle-cap {
+  height:42px;
+  width:52px;
+  border-radius:5px 5px 2px 2px;
+  background:linear-gradient(90deg,#b9a780,#e1d6bc,#a68d60);
+  border:1px solid #b7a47d
+}
+.bottle-neck {
+  width:43px;
+  height:22px;
+  background:#b9c7ae;
+  border-left:1px solid #9baa91;
+  border-right:1px solid #9baa91
+}
+.bottle-glass {
+  width:158px;
+  height:220px;
+  border-radius:27px 27px 35px 35px;
+  border:1px solid rgba(255,255,255,.8);
+  background:linear-gradient(90deg,rgba(166,188,156,.95),rgba(231,236,219,.88) 35%,rgba(163,185,151,.94) 80%,#829a7e);
+  box-shadow:inset 12px 0 18px rgba(255,255,255,.4),inset -10px 0 15px rgba(57,88,64,.15);
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.bottle-label {
+  background:rgba(249,247,237,.82);
+  padding:18px 12px;
+  text-align:center;
+  font:600 24px var(--serif);
+  letter-spacing:4px;
+  color:var(--forest);
+  box-shadow:0 2px 9px #788c7130
+}
+.bottle-label small {
+  display:block;
+  font:7px var(--sans);
+  letter-spacing:1.2px;
+  margin-top:7px
+}
+.leaf {
+  position:absolute;
+  width:75px;
+  height:130px;
+  border-radius:100% 0 100% 0;
+  background:linear-gradient(135deg,#8da58a,#c7d3bd);
+  opacity:.8;
+  transform:rotate(30deg)
+}
+.leaf-one {
+  right:6%;
+  top:13%;
+  transform:rotate(30deg)
+}
+.leaf-two {
+  left:7%;
+  bottom:15%;
+  transform:rotate(-54deg) scale(.8)
+}
+.leaf-three {
+  right:4%;
+  bottom:12%;
+  transform:rotate(60deg) scale(.65)
+}
+.art-caption {
+  position:absolute;
+  bottom:2px;
+  right:5%;
+  font:italic 16px var(--serif);
+  color:#7a8b78
+}
+.scroll-hint {
+  position:absolute;
+  bottom:24px;
+  left:9%;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#7b887b
+}
+.scroll-hint span {
+  margin-left:14px;
+  color:var(--gold)
+}
+.section-pad {
+  padding:100px 9%
+}
+.intro {
+  text-align:center;
+  max-width:790px;
+  margin:auto;
+  padding-top:105px;
+  padding-bottom:90px
+}
+.intro .eyebrow {
+  margin-bottom:17px
+}
+.intro h2,.section-heading h2 {
+  font-size:clamp(38px,4vw,56px)
+}
+.intro>p:not(.eyebrow) {
+  max-width:560px;
+  margin:23px auto 0;
+  color:var(--muted);
+  font-size:13px;
+  line-height:2
+}
+.intro-rule {
+  margin:32px auto 0;
+  width:100px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold)
+}
+.intro-rule:before,.intro-rule:after {
+  content:"";
+  height:1px;
+  background:var(--sand);
+  flex:1
+}
+.collection {
+  background:var(--paper)
+}
+.section-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:25px;
+  margin-bottom:35px
+}
+.section-heading>p {
+  max-width:220px;
+  font-size:11px;
+  line-height:1.8;
+  color:var(--muted)
+}
+.filters {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:30px
+}
+.filter {
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:30px;
+  padding:10px 16px;
+  font-size:10px;
+  color:#637366;
+  cursor:pointer;
+  transition:all .2s
+}
+.filter:hover,.filter.active {
+  background:var(--forest);
+  border-color:var(--forest);
+  color:white
+}
+.perfume-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:25px 17px
+}
+.perfume-card {
+  min-width:0;
+  animation:rise .45s both
+}
+.perfume-visual {
+  height:205px;
+  background:var(--bottle-bg,#e5e9de);
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  border-radius:2px
+}
+.perfume-visual:before {
+  content:"";
+  position:absolute;
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  background:#ffffff55;
+  top:15px;
+  right:-25px
+}
+.mini-bottle {
+  position:relative;
+  z-index:1;
+  width:68px;
+  height:105px;
+  border-radius:12px 12px 15px 15px;
+  background:linear-gradient(90deg,var(--bottle-dark),var(--bottle-color) 35%,var(--bottle-light) 65%,var(--bottle-dark));
+  box-shadow:9px 12px 12px #26352d20,inset 3px 0 6px #ffffff80;
+  border:1px solid #ffffff70;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+.mini-bottle:before {
+  content:"";
+  position:absolute;
+  width:25px;
+  height:18px;
+  background:linear-gradient(90deg,#b5a277,#e8ddbd,#a18b61);
+  top:-18px;
+  border-radius:3px 3px 0 0
+}
+.mini-bottle:after {
+  content:"ELIXA";
+  position:absolute;
+  background:#f7f5e9df;
+  color:var(--forest);
+  font:600 9px var(--serif);
+  letter-spacing:1px;
+  padding:6px 3px;
+  top:39px
+}
+.perfume-number {
+  position:absolute;
+  top:13px;
+  left:14px;
+  font:italic 15px var(--serif);
+  color:#667b67
+}
+.perfume-info {
+  padding:14px 2px 0
+}
+.perfume-info h3 {
+  font:600 23px var(--serif);
+  margin:0 0 5px;
+  color:var(--deep)
+}
+.perfume-tags {
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap
+}
+.tag {
+  font-size:8px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  color:#71806f;
+  background:#edf0e7;
+  padding:5px 7px;
+  border-radius:2px
+}
+.perfume-info p {
+  font-size:10px;
+  line-height:1.6;
+  color:var(--muted);
+  margin:10px 0 0
+}
+.quiz-section {
+  background:linear-gradient(125deg,#e8ece1,#f5f3e9);
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:8%;
+  align-items:center;
+  position:relative;
+  overflow:hidden
+}
+.quiz-intro {
+  position:relative;
+  z-index:1
+}
+.quiz-intro h2 {
+  font-size:clamp(43px,4.5vw,62px)
+}
+.quiz-intro>p:not(.eyebrow) {
+  font-size:12px;
+  line-height:1.9;
+  color:var(--muted);
+  max-width:340px;
+  margin:23px 0
+}
+.quiz-stamp {
+  width:104px;
+  height:104px;
+  border:1px solid #b3c1ac;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  margin-top:42px;
+  transform:rotate(-10deg);
+  color:var(--forest)
+}
+.quiz-stamp span {
+  font:600 21px var(--serif);
+  letter-spacing:3px
+}
+.quiz-stamp small {
+  font-size:6px;
+  letter-spacing:1px;
+  margin-top:5px
+}
+.quiz-decoration {
+  position:absolute;
+  left:2%;
+  top:8%;
+  display:flex;
+  flex-direction:column;
+  color:#c0cdb8;
+  font-size:30px;
+  gap:45px;
+  opacity:.8
+}
+.quiz-card,.result-card {
+  background:var(--paper);
+  padding:30px 34px;
+  box-shadow:0 20px 55px #334c3810;
+  position:relative;
+  z-index:1
+}
+.progress-top {
+  display:flex;
+  justify-content:space-between;
+  color:#7a877b;
+  font-size:9px;
+  letter-spacing:1px
+}
+.progress-track {
+  height:3px;
+  background:#e7eadf;
+  margin:13px 0 29px
+}
+.progress-track span {
+  height:100%;
+  width:25%;
+  display:block;
+  background:var(--forest);
+  transition:width .3s
+}
+.question {
+  border:0;
+  padding:0;
+  margin:0;
+  display:none;
+  min-width:0
+}
+.question.active {
+  display:block;
+  animation:fade .25s
+}
+.question legend {
+  font:600 26px/1.2 var(--serif);
+  color:var(--deep);
+  margin-bottom:22px;
+  width:100%
+}
+.question legend span {
+  font:10px var(--sans);
+  letter-spacing:1px;
+  color:var(--gold);
+  display:block;
+  margin-bottom:12px
+}
+.choice {
+  display:flex;
+  align-items:center;
+  gap:13px;
+  border:1px solid #e3e7dd;
+  padding:13px 12px;
+  margin:9px 0;
+  cursor:pointer;
+  transition:border .2s,background .2s;
+  position:relative
+}
+.choice:has(input:checked) {
+  border-color:#819780;
+  background:#f0f3eb
+}
+.choice input {
+  position:absolute;
+  opacity:0
+}
+.choice-icon {
+  width:33px;
+  height:33px;
+  border-radius:50%;
+  background:#edf0e6;
+  display:grid;
+  place-items:center;
+  color:var(--forest);
+  font-size:17px;
+  flex-shrink:0
+}
+.choice b {
+  display:block;
+  font-size:11px;
+  font-weight:600;
+  color:#33483a
+}
+.choice small {
+  display:block;
+  font-size:9px;
+  color:#879186;
+  margin-top:4px
+}
+.choice i {
+  margin-left:auto;
+  font-style:normal;
+  color:#8e9c8b
+}
+.quiz-controls {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:24px
+}
+.quiz-controls .button {
+  padding:13px 15px
+}
+.quiz-error {
+  font-size:10px;
+  color:#a4473f;
+  min-height:15px;
+  margin-top:12px
+}
+.hidden {
+  display:none!important
+}
+.result-card {
+  text-align:center;
+  align-self:center;
+  animation:fade .4s
+}
+.result-card .eyebrow {
+  margin-bottom:15px
+}
+.result-bottle {
+  height:130px;
+  width:120px;
+  margin:0 auto 15px;
+  display:grid;
+  place-items:center;
+  background:#e7ebdf;
+  border-radius:50%
+}
+.result-bottle .mini-bottle {
+  transform:scale(1.03)
+}
+.result-card h3 {
+  font:600 38px var(--serif);
+  margin:10px 0;
+  color:var(--forest)
+}
+.result-meta {
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#84917f
+}
+.result-card>p:not(.eyebrow):not(.result-meta) {
+  font-size:12px;
+  line-height:1.8;
+  color:var(--muted);
+  max-width:390px;
+  margin:15px auto
+}
+.fine-print {
+  font-size:9px!important;
+  color:#9a9f94!important
+}
+.story {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10%;
+  align-items:center;
+  background:var(--cream)
+}
+.story-visual {
+  height:360px;
+  position:relative;
+  display:grid;
+  place-items:center;
+  background:#e5e9dd;
+  overflow:hidden
+}
+.story-circle {
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:linear-gradient(145deg,#c7d3bd,#eff0e4);
+  box-shadow:0 20px 50px #4e684b15
+}
+.story-leaf {
+  position:absolute;
+  width:95px;
+  height:160px;
+  background:linear-gradient(130deg,#78947a,#b9c9b1);
+  border-radius:100% 0 100% 0;
+  opacity:.8
+}
+.leaf-a {
+  left:20%;
+  top:12%;
+  transform:rotate(-24deg)
+}
+.leaf-b {
+  right:15%;
+  bottom:10%;
+  transform:rotate(130deg) scale(.9)
+}
+.story-badge {
+  position:absolute;
+  bottom:28px;
+  left:28px;
+  background:var(--forest);
+  color:white;
+  border-radius:50%;
+  width:80px;
+  height:80px;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  font-size:8px;
+  letter-spacing:1px;
+  line-height:1.5;
+  transform:rotate(-8deg)
+}
+.story-copy h2 {
+  font-size:clamp(43px,4.4vw,62px)
+}
+.story-copy>p:not(.eyebrow) {
+  font-size:12px;
+  line-height:2;
+  color:var(--muted);
+  margin:24px 0
+}
+.story-copy .text-link {
+  display:inline-block;
+  margin-top:7px
+}
+.closing {
+  text-align:center;
+  background:#e8ece2;
+  padding-top:80px;
+  padding-bottom:90px
+}
+.closing h2 {
+  font-size:clamp(42px,5vw,66px);
+  margin-bottom:28px
+}
+.footer {
+  padding:25px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  background:var(--deep);
+  color:#dfe6d8;
+  font-size:9px;
+  letter-spacing:.5px
+}
+.footer-brand {
+  font:600 24px var(--serif);
+  letter-spacing:4px
+}
+.footer a:last-child {
+  color:#c5d0bd
+}
+@keyframes fade {
+  from {
+    opacity:0;
+    transform:translateY(8px)
+  }
+to {
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+@keyframes rise {
+  from {
+    opacity:0;
+    transform:translateY(10px)
+  }
+to {
+    opacity:1;
+    transform:translateY(0)
+  }
+}
+@media(max-width:1050px) {
+  .header {
+    padding:0 4%
+  }
+.nav {
+    gap:14px
+  }
+.nav a {
+    font-size:10px
+  }
+.hero {
+    padding-left:6%;
+    padding-right:6%
+  }
+.section-pad {
+    padding-left:6%;
+    padding-right:6%
+  }
+.perfume-grid {
+    grid-template-columns:repeat(3,minmax(0,1fr))
+  }
+.quiz-section {
+    gap:4%
+  }
+}
+@media(max-width:760px) {
+  .header {
+    height:72px;
+    padding:0 5%
+  }
+.brand {
+    min-width:0
+  }
+.brand>span {
+    font-size:22px
+  }
+.nav-cta {
+    display:none
+  }
+.menu-toggle {
+    display:block;
+    margin-left:auto
+  }
+.nav {
+    display:none;
+    position:absolute;
+    left:0;
+    right:0;
+    top:71px;
+    padding:20px 6%;
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px
+  }
+.nav.open {
+    display:flex
+  }
+.hero {
+    grid-template-columns:1fr;
+    padding:58px 7% 66px;
+    gap:8px;
+    min-height:0
+  }
+.hero h1 {
+    font-size:58px
+  }
+.hero-art {
+    height:330px;
+    grid-row:1;
+    grid-column:1
+  }
+.sun-disc {
+    width:245px;
+    height:245px
+  }
+.orbit {
+    width:285px;
+    height:285px
+  }
+.orbit-two {
+    width:310px;
+    height:225px
+  }
+.bottle-glass {
+    width:120px;
+    height:165px
+  }
+.bottle-cap {
+    height:32px;
+    width:42px
+  }
+.bottle-neck {
+    height:17px;
+    width:35px
+  }
+.bottle-label {
+    font-size:19px
+  }
+.hero-copy {
+    grid-row:2
+  }
+.hero-note {
+    margin-top:30px
+  }
+.scroll-hint {
+    left:7%;
+    font-size:7px
+  }
+.section-pad {
+    padding:70px 6%
+  }
+.intro {
+    padding-top:70px;
+    padding-bottom:65px
+  }
+.section-heading {
+    display:block
+  }
+.section-heading>p {
+    max-width:330px;
+    margin-top:15px
+  }
+.perfume-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:23px 13px
+  }
+.perfume-visual {
+    height:175px
+  }
+.perfume-info h3 {
+    font-size:21px
+  }
+.quiz-section {
+    grid-template-columns:1fr;
+    gap:30px
+  }
+.quiz-intro h2 {
+    font-size:48px
+  }
+.quiz-stamp {
+    display:none
+  }
+.quiz-card,.result-card {
+    padding:23px 18px
+  }
+.question legend {
+    font-size:24px
+  }
+.choice {
+    padding:12px 9px
+  }
+.choice small {
+    font-size:8px
+  }
+.story {
+    grid-template-columns:1fr;
+    gap:35px
+  }
+.story-visual {
+    height:280px
+  }
+.story-circle {
+    width:190px;
+    height:190px
+  }
+.story-copy h2 {
+    font-size:49px
+  }
+.footer {
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center
+  }
+.footer span {
+    width:100%;
+    order:3
+  }
+}
+@media(max-width:380px) {
+  .hero h1 {
+    font-size:49px
+  }
+.perfume-visual {
+    height:150px
+  }
+.quiz-controls .button {
+    font-size:9px;
+    padding:12px 10px
+  }
+.choice {
+    gap:8px
+  }
+.choice-icon {
+    width:28px;
+    height:28px
+  }
+}

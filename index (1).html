@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ELIXA, perfumes artesanales inspirados en la naturaleza. Encuentra la esencia que va contigo.">
+  <title>ELIXA | Perfumes artesanales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="ELIXA inicio">
+      <img src="logo-elixa.jpeg" alt="Logo de ELIXA" onerror="this.style.display='none'">
+      <span>ELIXA<small>PERFUMES ARTESANALES</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#coleccion">Colección</a>
+      <a href="#encuesta">Encuentra tu esencia</a>
+      <a href="#historia">Nuestra esencia</a>
+    </nav>
+    <a class="nav-cta" href="#encuesta">Descubrir aroma <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-glow"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> LA NATURALEZA EN CADA GOTA</p>
+        <h1>Respira calma.<br><em>Deja tu esencia.</em></h1>
+        <p class="hero-text">Perfumes artesanales que convierten los pequeños momentos en recuerdos inolvidables. Encuentra una fragancia que hable de ti.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#coleccion">Explorar perfumes <span>↗</span></a>
+          <a class="text-link" href="#encuesta">Encuentra tu aroma <span>↓</span></a>
+        </div>
+        <div class="hero-note"><span class="leaf-icon">❧</span><span>Inspirados en la serenidad<br>de la naturaleza.</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración decorativa de perfume y naturaleza">
+        <div class="sun-disc"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="leaf leaf-one"></div><div class="leaf leaf-two"></div><div class="leaf leaf-three"></div>
+        <div class="hero-bottle">
+          <div class="bottle-cap"></div><div class="bottle-neck"></div>
+          <div class="bottle-glass"><span class="bottle-label">ELIXA<small>BOTANICAL PERFUME</small></span></div>
+        </div>
+        <p class="art-caption">Una pausa para tus sentidos</p>
+      </div>
+      <a class="scroll-hint" href="#coleccion">DESLIZA PARA DESCUBRIR <span>↓</span></a>
+    </section>
+
+    <section class="intro section-pad">
+      <p class="eyebrow">UN RITUAL PERSONAL</p>
+      <h2>Tu aroma, tu <em>momento.</em></h2>
+      <p>Hay aromas que reconfortan, otros que inspiran y algunos que se quedan en la memoria. En ELIXA creemos que elegir un perfume es elegir cómo quieres sentirte.</p>
+      <div class="intro-rule"><span>✳</span></div>
+    </section>
+
+    <section class="collection section-pad" id="coleccion">
+      <div class="section-heading">
+        <div><p class="eyebrow">NUESTRA COLECCIÓN</p><h2>Encuentra tu <em>favorito</em></h2></div>
+        <p>Veinte nombres, veinte formas de expresar tu esencia.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar perfumes">
+        <button class="filter active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="mujer">Para mujer</button>
+        <button class="filter" data-filter="hombre">Para hombre</button>
+        <button class="filter" data-filter="fuerte">Aroma fuerte</button>
+        <button class="filter" data-filter="suave">Suave / dulce</button>
+      </div>
+      <div class="perfume-grid" id="perfumeGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="quiz-section section-pad" id="encuesta">
+      <div class="quiz-decoration"><span>✳</span><span>❧</span><span>✳</span></div>
+      <div class="quiz-intro">
+        <p class="eyebrow">TU PERFUME IDEAL</p>
+        <h2>¿Qué aroma conecta<br>con <em>tu esencia?</em></h2>
+        <p>Responde estas preguntas y te recomendaremos una fragancia de nuestra colección según tus preferencias.</p>
+        <div class="quiz-stamp"><span>ELIXA</span><small>ENCUENTRA TU RITUAL</small></div>
+      </div>
+      <form class="quiz-card" id="quizForm">
+        <div class="progress-top"><span id="progressText">Pregunta 1 de 4</span><span id="progressPercent">25%</span></div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+
+        <fieldset class="question active" data-step="0">
+          <legend><span>01</span> ¿Para quién buscas el perfume?</legend>
+          <label class="choice"><input type="radio" name="gender" value="mujer" required><span class="choice-icon">✿</span><span><b>Para mujer</b><small>Fragancias de nuestra colección femenina</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="gender" value="hombre"><span class="choice-icon">❋</span><span><b>Para hombre</b><small>Fragancias de nuestra colección masculina</small></span><i>↗</i></label>
+        </fieldset>
+
+        <fieldset class="question" data-step="1">
+          <legend><span>02</span> ¿Qué intensidad prefieres?</legend>
+          <label class="choice"><input type="radio" name="intensity" value="fuerte" required><span class="choice-icon">✧</span><span><b>Fuerte e intensa</b><small>Una presencia que se hace notar</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="intensity" value="suave"><span class="choice-icon">❀</span><span><b>Suave o dulce</b><small>Una sensación delicada y acogedora</small></span><i>↗</i></label>
+        </fieldset>
+
+        <fieldset class="question" data-step="2">
+          <legend><span>03</span> ¿Qué sensación te gustaría transmitir?</legend>
+          <label class="choice"><input type="radio" name="mood" value="elegancia" required><span class="choice-icon">◇</span><span><b>Elegancia</b><small>Sobriedad, seguridad y distinción</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="mood" value="frescura"><span class="choice-icon">❧</span><span><b>Frescura y tranquilidad</b><small>Una sensación natural y ligera</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="mood" value="dulzura"><span class="choice-icon">♡</span><span><b>Dulzura</b><small>Calidez, ternura y cercanía</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="mood" value="sensualidad"><span class="choice-icon">✦</span><span><b>Sensualidad</b><small>Una impresión memorable</small></span><i>↗</i></label>
+        </fieldset>
+
+        <fieldset class="question" data-step="3">
+          <legend><span>04</span> ¿En qué momento lo usarías más?</legend>
+          <label class="choice"><input type="radio" name="occasion" value="diario" required><span class="choice-icon">☼</span><span><b>En el día a día</b><small>Para acompañar tu rutina</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="occasion" value="trabajo"><span class="choice-icon">⌂</span><span><b>Trabajo o estudio</b><small>Para sentirte bien y con confianza</small></span><i>↗</i></label>
+          <label class="choice"><input type="radio" name="occasion" value="especial"><span class="choice-icon">✧</span><span><b>Una cita o evento especial</b><small>Para dejar una impresión</small></span><i>↗</i></label>
+        </fieldset>
+
+        <div class="quiz-error" id="quizError" role="alert"></div>
+        <div class="quiz-controls"><button type="button" class="button button-light" id="prevBtn" disabled>← Anterior</button><button type="button" class="button button-dark" id="nextBtn">Siguiente →</button><button type="submit" class="button button-dark hidden" id="resultBtn">Ver recomendación ↗</button></div>
+      </form>
+      <div class="result-card hidden" id="resultCard" aria-live="polite">
+        <p class="eyebrow">TU RECOMENDACIÓN ELIXA</p>
+        <div class="result-bottle" id="resultBottle"></div>
+        <h3 id="resultName"></h3><p class="result-meta" id="resultMeta"></p>
+        <p id="resultReason"></p>
+        <p class="fine-print">Recomendación basada en tus preferencias y en la clasificación de intensidad proporcionada para la colección.</p>
+        <button type="button" class="button button-dark" id="retakeBtn">Volver a responder ↻</button>
+      </div>
+    </section>
+
+    <section class="story section-pad" id="historia">
+      <div class="story-visual"><div class="story-circle"></div><div class="story-leaf leaf-a"></div><div class="story-leaf leaf-b"></div><div class="story-badge">HECHO CON<br>INTENCIÓN</div></div>
+      <div class="story-copy"><p class="eyebrow">EL ARTE DE SENTIR</p><h2>La belleza está<br>en lo <em>natural.</em></h2><p>ELIXA nace de la idea de que un perfume puede ser mucho más que una fragancia: puede acompañar tus recuerdos, expresar tu personalidad y regalarte un instante de calma.</p><p>Explora nuestra colección, descubre tu preferencia y encuentra el aroma que mejor acompaña tu día.</p><a class="text-link" href="#encuesta">Descubrir mi esencia <span>↗</span></a></div>
+    </section>
+
+    <section class="closing section-pad" id="contacto"><p class="eyebrow">ELIXA · PERFUMES ARTESANALES</p><h2>Deja que la naturaleza<br><em>hable por ti.</em></h2><a class="button button-dark" href="#coleccion">Conocer la colección ↗</a></section>
+  </main>
+
+  <footer class="footer"><a class="footer-brand" href="#inicio">ELIXA</a><span>Una esencia para cada momento.</span><a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>
